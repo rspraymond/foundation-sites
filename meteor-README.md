@@ -1,4 +1,4 @@
-# [Foundation for Sites](http://foundation.zurb.com) (v6.2.1)
+# [Foundation for Sites](https://get.foundation) (v6.6.3)
 
 Foundation is the most advanced responsive front-end framework in the world. Quickly go from prototype to production, building sites or apps that work on any kind of device with Foundation. Includes layout constructs, like a fully customizable, responsive grid, commonly used JavaScript plugins, and full A11Y support.
 
@@ -33,44 +33,65 @@ Each component has an export mixin which prints out the CSS for that component. 
 Or you can comment out the components you don't need:
 
 ```
+@import 'foundation';
+
+// Global styles
 @include foundation-global-styles;
-@include foundation-grid;
-@include foundation-typography;
-@include foundation-button;
 @include foundation-forms;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-@include foundation-badge;
-@include foundation-breadcrumbs;
+@include foundation-typography;
+
+// Grids (choose one)
+@include foundation-xy-grid-classes;
+// @include foundation-grid;
+// @include foundation-flex-grid;
+
+// Generic components
+@include foundation-button;
 @include foundation-button-group;
-@include foundation-callout;
 @include foundation-close-button;
-@include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-flex-video;
 @include foundation-label;
-@include foundation-media-object;
-@include foundation-menu;
-@include foundation-off-canvas;
-@include foundation-orbit;
-@include foundation-pagination;
 @include foundation-progress-bar;
 @include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
 @include foundation-switch;
 @include foundation-table;
+// Basic components
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-dropdown;
+@include foundation-pagination;
+@include foundation-tooltip;
+
+// Containers
+@include foundation-accordion;
+@include foundation-media-object;
+@include foundation-orbit;
+@include foundation-responsive-embed;
 @include foundation-tabs;
 @include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-accordion-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+
+// Layout components
+@include foundation-off-canvas;
+@include foundation-reveal;
+@include foundation-sticky;
 @include foundation-title-bar;
-@include foundation-tooltip;
 @include foundation-top-bar;
+
+// Helpers
+@include foundation-float-classes;
+// @include foundation-flex-classes;
+@include foundation-visibility-classes;
+// @include foundation-prototype-classes;
 ```
 
-Note: For now there is a Motion-UI library added in the package (css, js files). It is needed for some Foundation plugins. Maybe in the future it will be separated package. 
+Note: For now there is a Motion-UI library added in the package (css, js files). It is needed for some Foundation plugins. Maybe in the future it will be separated package.
 
 ### 3. Overwrite Foundation settings
 
@@ -141,10 +162,9 @@ Template.myReveal.onDestroyed(function () {
 
 As you can see it is better to create small templates for plugins and initiate the plugins separately in the `onRendered` lifecycle hook. You should also remember to destroy the plugin using `onDestroyed`lifecycle hook on its template.
 
-You will find more info about particular plugins on its docs page here: [http://foundation.zurb.com/sites/docs/](http://foundation.zurb.com/sites/docs/)
+You will find more info about particular plugins on its docs page here: [https://get.foundation/sites/docs/](https://get.foundation/sites/docs/)
 
 #### Known problems
 
-1. **Conflicts with Meteor events**. 
-Solution: Try to always wrap Foundation's DOM nodes into another ones in your Meteor templates. This applies only to nodes on which are initialized Foundation's JS plugins and which are the first nodes in the Meteor templates with attached custom Meteor events. For more details read the last comments here: [#7248](https://github.com/zurb/foundation-sites/issues/7248)
-
+1. **Conflicts with Meteor events**.
+Solution: Try to always wrap Foundation's DOM nodes into another ones in your Meteor templates. This applies only to nodes on which are initialized Foundation's JS plugins and which are the first nodes in the Meteor templates with attached custom Meteor events. For more details read the last comments here: [#7248](https://github.com/foundation/foundation-sites/issues/7248)

@@ -1,10 +1,16 @@
 ---
 title: Sass
 description: Foundation is written in Sass, which allows us to make the codebase customizable and flexible.
+video: mYiyunVQdMY
 ---
 
+<div class="callout training-callout">
+  <p>Get trained up on Foundation's Sass with our online webinar training. Sass allows you to write dramatically more efficient code. We'll go over things like how to install and start compiling Sass, nesting mixins and functions, and writing fully semantic CSS using Foundation mixins for insanely maintainable code.</p>
+  <a href="https://zurb.com/university/advanced-foundation-training" target="_blank">Reserve your spot →</a>
+</div>
+
 <div class="primary callout">
-  <p>Not familiar with Sass? The [official tutorial](http://sass-lang.com/guide) on sass-lang.com is a great place to start.</p>
+  <p>Not familiar with Sass? The [official tutorial](https://sass-lang.com/guide) on sass-lang.com is a great place to start.</p>
 </div>
 
 ## Compatibility
@@ -24,7 +30,7 @@ To get the proper browser support, use these Autoprefixer settings:
 
 ```js
 autoprefixer({
-  browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']
+  browsers: ['last 2 versions', 'ie >= 9', 'android >= 4.4', 'ios >= 7']
 });
 ```
 
@@ -32,7 +38,7 @@ autoprefixer({
 
 ## Loading the Framework
 
-If you're using Yeti Launch or the CLI to create a project, the Sass compilation process is already set up for you. If not, you can compile our Sass files yourself, or drop in a pre-built CSS file.
+If you're using the CLI to create a project, the Sass compilation process is already set up for you. If not, you can compile our Sass files yourself, or drop in a pre-built CSS file.
 
 To get started, first install the framework files using Bower or npm.
 
@@ -51,7 +57,7 @@ Here's an example using grunt-contrib-sass:
 grunt.initConfig({
   sass: {
     dist: {
-    options: {
+      options: {
         loadPath: ['node_modules/foundation-sites/scss']
       }
     }
@@ -71,7 +77,11 @@ Finally, add an `@import` statement to the top of your primary Sass file. Refer 
 @import 'foundation';
 ```
 
-You're also going to want a settings file for your project, which will allow you to modify the default styles of Foundation. **[Download the latest settings file here](https://raw.githubusercontent.com/zurb/foundation-sites/master/scss/settings/_settings.scss)**, add it to your project as `_settings.scss`, then import it *before* Foundation itself.
+You're also going to want a settings file for your project, which will allow you to modify the default styles of Foundation. **[Download the latest settings file here](https://raw.githubusercontent.com/foundation/foundation-sites/master/scss/settings/_settings.scss)**, add it to your project as `_settings.scss`, then import it *before* Foundation itself. 
+
+<div class="callout">
+The settings file needs to import `util/util` from Foundation. Please ensure that the Foundation folder is included in Sass or change `@import util/util` for it to points to the full path of the file. For example, NPM users may need to change the import to `node_modules/foundation-sites/scss/util/util`.
+</div>
 
 ```scss
 @import 'settings';
@@ -100,29 +110,77 @@ Each component has an **export mixin** which prints out the CSS for that compone
 @include foundation-everything;
 ```
 
-Our [starter projects](starter-projects.html) include the full list of imports, making it easy to comment out the components you don't need.
+Our [starter projects](starter-projects.html) include the full list of imports, making it easy to comment out the components you don't need. A full list is also included below.
 
 ```scss
 @import 'foundation';
 
+// Global styles
 @include foundation-global-styles;
-@include foundation-grid;
-@include foundation-typography;
-@include foundation-button;
 @include foundation-forms;
-// And so on...
+@include foundation-typography;
+
+// Grids (choose one)
+@include foundation-xy-grid-classes;
+// @include foundation-grid;
+// @include foundation-flex-grid;
+
+// Generic components
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-close-button;
+@include foundation-label;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-switch;
+@include foundation-table;
+// Basic components
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-dropdown;
+@include foundation-pagination;
+@include foundation-tooltip;
+
+// Containers
+@include foundation-accordion;
+@include foundation-media-object;
+@include foundation-orbit;
+@include foundation-responsive-embed;
+@include foundation-tabs;
+@include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-accordion-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+
+// Layout components
+@include foundation-off-canvas;
+@include foundation-reveal;
+@include foundation-sticky;
+@include foundation-title-bar;
+@include foundation-top-bar;
+
+// Helpers
+@include foundation-float-classes;
+// @include foundation-flex-classes;
+@include foundation-visibility-classes;
+// @include foundation-prototype-classes;
 ```
 
 ---
 
 ## The Settings File
 
-All Foundation projects include a settings file, named `_settings.scss`. If you're using Yeti Launch or the CLI to create a Foundation for Sites project, you can find the settings file under scss/ (basic template) or src/assets/scss/ (ZURB template). If you're installing the framework standalone using Bower or npm, there's a settings file included in those packages, which you can move into your own Sass files to work with.
+All Foundation projects include a settings file, named `_settings.scss`. If you're using the CLI to create a Foundation for Sites project, you can find the settings file under scss/ (basic template) or src/assets/scss/ (ZURB template). If you're installing the framework standalone using Bower or npm, there's a settings file included in those packages, which you can move into your own Sass files to work with.
 
 Every component includes a set of variables that modify core structural or visual styles. If there's something you can't customize with a variable, you can just write your own CSS to add it.
 
 <div class="callout warning">
-  <p>Once you've set up a new project, your settings file can't be automatically updated when new versions change, add, or remove variables. Keep tabs on new <a href="https://github.com/zurb/foundation/releases">Foundation releases</a> so you know when things change.</p>
+  <p>Once you've set up a new project, your settings file can't be automatically updated when new versions change, add, or remove variables. Keep tabs on new <a href="https://github.com/foundation/foundation-sites/releases">Foundation releases</a> so you know when things change.</p>
 </div>
 
 Here's an example set of settings variables. These change the default styling of [buttons](button.html):

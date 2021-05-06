@@ -6,7 +6,7 @@ description: Foundation for Sites is a fully-accessible framework. Here are some
 In addition to the accessibility features built into Foundation's components, be sure to follow best practices for making your site more accessible.
 
 <div class="primary callout">
-  <p>Care about accessibility or want to contribute? Submit a Pull Request or get into the [conversation on GitHub](https://github.com/zurb/foundation-sites/labels/accessibility).</p>
+  <p>Care about accessibility or want to contribute? Submit a Pull Request or get into the [conversation on GitHub](https://github.com/foundation/foundation-sites/labels/accessibility).</p>
 </div>
 
 ## Basic Principles
@@ -23,7 +23,7 @@ In addition to the accessibility features built into Foundation's components, be
 ### Visual
 
 Visually-impaired users may have low vision or be completely blind. For low vision users, proper typographic contrast is important, both size and color. Foreground colors should stand out from background colors. You can use tools to calculate the contrast ratio of your foreground and background colors. The contrast ratio should at least be 1:4.5 for normal text and 3:1 for large text.
-Blind users consume the web by reading it using a [screen reader](http://en.wikipedia.org/wiki/Screen_reader). Screen readers read the content of a web page out loud, or write it out as Braille, using certain queues from the HTML to infer meaning.
+Blind users consume the web by reading it using a [screen reader](https://en.wikipedia.org/wiki/Screen_reader). Screen readers read the content of a web page out loud, or write it out as Braille, using certain cues from the HTML to infer meaning.
 
 ### Motor
 
@@ -60,18 +60,18 @@ If you're using the Sass version of Foundation, you can use this mixin to enable
 
 ### Resources
 
-- [WCAG 2.0 Guide](http://www.w3.org/TR/UNDERSTANDING-WCAG20/)
+- [WCAG 2.0 Guide](https://www.w3.org/TR/UNDERSTANDING-WCAG20/)
 - [MDN accessibility documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-- [w3.org Introduction to Accessibility](http://www.w3.org/WAI/intro/accessibility.php)
-- [Section 508 government requirements](http://www.section508.gov/)
-- [WebAIM certification and training](http://webaim.org/)
-- [Web Accessibility Checklist](http://a11yproject.com/checklist.html)
+- [w3.org Introduction to Accessibility](https://www.w3.org/WAI/intro/accessibility.php)
+- [Section 508 government requirements](https://www.section508.gov/)
+- [WebAIM certification and training](https://webaim.org/)
+- [Web Accessibility Checklist](https://a11yproject.com/checklist.html)
 
 ### Tools
 
 - [Tenon accessibility checker](https://tenon.io/index.php)
-- [WAVE Chrome plugin - free accessibility checker](http://wave.webaim.org)
-- [Color Contrast Checker](http://webaim.org/resources/contrastchecker)
-- [ChromeVox screen reader plugin for Chrome](http://www.chromevox.com)
-- [JAWS screen reader for Windows](http://www.freedomscientific.com/Products/Blindness/Jaws)
-- [NVDA screen reader for Windows - Free](http://www.nvaccess.org/download/)
+- [WAVE Chrome plugin - free accessibility checker](https://wave.webaim.org)
+- [Color Contrast Checker](https://webaim.org/resources/contrastchecker)
+- [ChromeVox screen reader plugin for Chrome](https://www.chromevox.com)
+- [JAWS screen reader for Windows](https://www.freedomscientific.com/Products/Blindness/Jaws)
+- [NVDA screen reader for Windows - Free](https://www.nvaccess.org/download/)
